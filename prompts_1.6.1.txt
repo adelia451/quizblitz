@@ -1,17 +1,16 @@
-PROMPT: (exactly what you asked)
+**PROMPT: (exactly what you asked)
 RESPONSE: (paste the code or summary you received)
-WHAT I USED / CHANGED: (1–3 lines)
+WHAT I USED / CHANGED: (1–3 lines)**
 
-Milestone 1 - Project Setup
+### Milestone 1 - Project Setup ###
 No AI used. 
 
-#####################################
+### Milestone 2 - StartScreen and ScoreBoard ###
 
-Milestone 2 - StartScreen and ScoreBoard
-
->PROMPT:
+**PROMPT:**
     When instructions say "component has no props", what is a component and what is a prop in the context of the instructions (pasted instruction section)?
-RESPONSE: 
+
+**RESPONSE:** 
     Component:
     A reusable piece of your UI.
     For example, StartScreen.vue is a component. Later, you could have other components like QuestionCard.vue, ScoreScreen.vue, etc.
@@ -24,13 +23,15 @@ RESPONSE:
 
     Here question is a prop passed into the child component.
     Your StartScreen has no props because it doesn’t need any external data from the parent. It just emits an event when the button is clicked.
-WHAT I USED / CHANGED: (1–3 lines)
+
+**WHAT I USED / CHANGED: (1–3 lines)**
     I only used this to understand what to do, there was no changed or used code. 
 
+**PROMPT:**
 
->PROMPT: 
     What is $emit` and the parent component?
-RESPONSE:
+
+**RESPONSE:**
     $emit is how a child tells its parent something happened.
 
     In your case:
@@ -45,14 +46,16 @@ RESPONSE:
     <StartScreen @start="showQuiz = true" />
     When start is emitted, the parent sets showQuiz = true and can replace the start screen with the quiz.
     So child → emits → parent listens → parent decides what to do.
-WHAT I USED / CHANGED: (1–3 lines)
+
+**WHAT I USED / CHANGED: (1–3 lines)**
     I only used this to understand what to do, there was no changed or used code. 
 
 
->PROMPT:
+**PROMPT**
     Write only skeleton code of a Vue 3 single-file component called ScoreBoard so I know what parts I need. 
     INSTRUCTIONS: - This component receives one prop: score (a Number). - It displays the final score and a Play Again button. -When Play Again is clicked, it emits "restart".
-RESPONSE:
+
+**RESPONSE**
     Got it! Here’s the bare skeleton code with only the essential structure and placeholders, so you can fill in the details yourself:
 
         <template>
@@ -86,17 +89,19 @@ RESPONSE:
     <style scoped> → empty for now
 
     You can now think about what goes in each section without being distracted by the full implementation.
-WHAT I USED / CHANGED: (1–3 lines):
-    I used the skeleton structure except the <style> and created the code myself using StartScreen.vue as a reference for everything except displaying score which is my following prompt. 
+
+**WHAT I USED / CHANGED: (1–3 lines):**
+    I used the skeleton structure except the `<style>` and created the code myself using StartScreen.vue as a reference for everything except displaying score which is my following prompt. 
 
 
->PROMPT:
+**PROMPT**
     I created
         props: {
             score: Number
         },
     What can I use to display score using the prop?
-RESPONSE: 
+
+**RESPONSE**
     Let’s go step by step, so you can understand the building blocks and do it yourself.
 
     Displaying the score using the prop
@@ -112,15 +117,34 @@ RESPONSE:
 
     {{ score }} → Vue will replace it with the value passed from the parent component.
     Think of it like saying “show me the current value of score right here”.
-WHAT I USED / CHANGED: (1–3 lines):
+
+**WHAT I USED / CHANGED: (1–3 lines)**
     I used <p>Your score: {{ score }} /  10</p> and took note of the double curly brackets in my notes. 
 
-#####################################
 
-Milestone 3 - StartScreen and ScoreBoard
+### Milestone 3 - StartScreen and ScoreBoard ##
 
->PROMPT: (exactly what you asked)
+**Prompt**
+(After filling out milestone 3 with as much as I could figure out from previous milestones)
 
-RESPONSE: (paste the code or summary you received)
+Can you explain what I've done and let me know what I have to complete to fulfil the instructions. (pasted instructions)
 
-WHAT I USED / CHANGED: (1–3 lines)
+**Prompt**
+How do I turn an answer green or red when it is clicked by binding a CSS class to each button to check if it's the selected index and if the index matches `question.correct`
+
+**Prompt**
+Can you explain how to use v-if to show and hide components.
+
+**Prompt**
+My other methods have console logs but not handleAnswer, how can I make a console log that logs what the score was and then says it gained a point and adds it or didnt gain a point and remains the same like:
+
+score: 5
+correct: +1
+score: 6
+
+score:6
+wrong: +0
+score: 6
+
+My main question is the logic because in handleAnswer it's going to augment the score and I want to make sure to print the score before it runs and then update it. I can write a console log but don't uite remember how to show a variable like the score
+
