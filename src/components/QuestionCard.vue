@@ -37,19 +37,20 @@ export default {
     name: 'QuestionCard',
 
     data() {
-        return {
-            question: {
-                question: "What does CSS stand for?",
-                answers: [ "Cascading Style Sheets", "Creative Style System", "Computer Style Syntax", "Coloured Screen Sheets"],
-                correct: 0
-            },
+         return {
             selectedIndex: null //means this variable starts empty because its job is to remember which button the user clicked
-        }
-    },
+    //         question: {
+    //             question: "What does CSS stand for?",
+    //             answers: [ "Cascading Style Sheets", "Creative Style System", "Computer Style Syntax", "Coloured Screen Sheets"],
+    //             correct: 0
+    //         },
+    //         selectedIndex: null //means this variable starts empty because its job is to remember which button the user clicked
+         }
+     },
 
-    // props: {
-    //     question: String
-    // },
+    props: {
+        question: Object
+    },
 
     methods: {
         //This function runs when a button is clicked. INDEX here is whatever number got passes in from the click.

@@ -5,12 +5,17 @@
     StartScreen should show when showStartScreen is true
 
     -->
-    <StartScreen v-if="showStartScreen" v-on:start="handleStart"/>
-    <ScoreBoard v-if="!showStartScreen" v-on:restart="resetGame" :score="score"/>
-    <!-- MILESTONE 3 
-    QuestionCard should show when showStartScreen
-    -->
-    <QuestionCard v-if="!showStartScreen" v-on:answer="handleAnswer" />
+    <StartScreen v-if="gameState === 'start'" v-on:start="startGame"/>
+    <QuestionCard 
+      v-else-if="gameState === 'playing'" 
+      :question="questions[currentIndex]"
+      v-on:answer="handleAnswer" 
+    />
+    <ScoreBoard 
+      v-else
+      :score="score"
+      v-on:restart="resetGame" 
+    />
   </div>
 </template>
 
@@ -31,32 +36,55 @@ export default {
   //data returns an object contaiing the reactive variables you want to use in your template or methods
   data() { 
     return {
-      score: 0,
-      showStartScreen: true
-    }
+      questions: [
+        { question: "What does CSS stand for?", answers: ["Cascading Style Sheets", "Creative Style System", "Computer Style Syntax", "Coloured Screen Sheets"], correct: 0 },
+        { question: "What is the capital of France?", answers: ["London", "Berlin", "Paris", "Madrid"], correct: 2 },
+        { question: "How many sides does a hexagon have?", answers: ["5", "6", "7", "8"], correct: 1 },
+        { question: "What planet is closest to the sun?", answers: ["Venus", "Earth", "Mars", "Mercury"], correct: 3 },
+        { question: "What is 12 x 12?", answers: ["124", "144", "132", "148"], correct: 1 },
+        { question: "What ocean is the largest?", answers: ["Atlantic", "Indian", "Arctic", "Pacific"], correct: 3 },
+        { question: "How many days are in a leap year?", answers: ["365", "366", "364", "367"], correct: 1 },
+        { question: "What is the fastest land animal?", answers: ["Lion", "Horse", "Cheetah", "Leopard"], correct: 2 },
+        { question: "How many continents are there?", answers: ["5", "6", "7", "8"], correct: 2 },
+        { question: "What gas do plants absorb?", answers: ["Oxygen", "Nitrogen", "Carbon Dioxide", "Hydrogen"], correct: 2 }
+      ],
+        currentIndex: 0,
+        score: 0,
+        gameState: "start" // "start" | "playing" | "end"
+      }
+      
   },
   methods: {
-    handleStart() {
+    startGame() {
       console.log("Play button clicked")
-      this.showStartScreen = false
+      this.gameState = "playing" //sets gameState to "playing"
+      this.currentIndex = 0 //resets currentIndex to 0
     },
     //runs when play is clocked, so we want to hide the start screen
     handleAnswer(isCorrect) {
-      console.log(this.score)
+      console.log("Score: ", this.score)
         if (isCorrect) {
-          console.log("correct: +1")
+          console.log("Correct: +1")
           this.score++
-          console.log(this.score)
+          console.log("Score: ", this.score)
         } else {
-          console.log("wrong: +0")
-          console.log(this.score)
+          console.log("Wrong: +0")
+          console.log("Score: ", this.score)
         }
+
+      this.currentIndex++ //increments currentIndex
+      console.log("Current question: ", this.currentIndex)
+      
+      if (this.currentIndex === this.questions.length) {
+        console.log ("Final score: ", this.score) //
+        this.gameState = "end"
+        console.log("Game over")
+      }
     },
     
     resetGame(){
       console.log("Game is restarting")
-      this.score = 0
-      this.showStartScreen = true
+      this.gameState = "start"
     }
   }
 }

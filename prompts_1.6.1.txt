@@ -122,7 +122,7 @@ No AI used.
     I used <p>Your score: {{ score }} /  10</p> and took note of the double curly brackets in my notes. 
 
 
-### Milestone 3 - StartScreen and ScoreBoard ##
+### Milestone 3 - QuestionCard ###
 
 **Prompt**
 (After filling out milestone 3 with as much as I could figure out from previous milestones)
@@ -148,3 +148,13 @@ score: 6
 
 My main question is the logic because in handleAnswer it's going to augment the score and I want to make sure to print the score before it runs and then update it. I can write a console log but don't uite remember how to show a variable like the score
 
+
+### Milestone 4 - App.vue Game Logic ###
+**Prompt**
+Can you please give me 9 trivia questions and their answers.
+
+**Prompt**
+I have a bracket or comma error, can you spot it for me? (pasted a section from data() where I had messed that up)
+
+**Prompt**
+I have a visual issue where the last button I click has an outline and I don't know why, is it in my css? (pasted css file)
