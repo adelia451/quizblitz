@@ -1,0 +1,10 @@
+Phase 1
+Week 6
+Class 2
+
+### MILESTONE 5 - Install and Configure Vue Router ###
+*Prompt*
+I have to create the router file at src/router/index.js. I thought that was touch src/router/index.js and it didnt work?? 
+"$ touch src/router/index.js
+touch: cannot touch 'src/router/index.js': No such file or directory"
+
