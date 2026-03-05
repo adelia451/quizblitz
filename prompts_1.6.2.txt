@@ -36,3 +36,5 @@ What's the difference between "." and ".."
 *Prompt*
 How can I center the text on a navigation Bar
 
+### MILESTONE 8 - Basic Navigation Guard ###
+NO AI USED

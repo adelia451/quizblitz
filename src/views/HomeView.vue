@@ -15,7 +15,7 @@ are now just telling the router to "take me to the route named play"
 
 <template>
   <div class="home">
-    <StartScreen v-on:start="goToPlay"/>
+    <StartScreen v-on:start="startGame"/>
   </div>
 </template>
 
@@ -29,7 +29,8 @@ are now just telling the router to "take me to the route named play"
     },
 
     methods: {
-        goToPlay() {
+        startGame() {
+            sessionStorage.setItem('gameStarted', 'true')
             //This name is from INDEX.JS
             this.$router.push({ name: 'play' })
         }

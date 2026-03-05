@@ -14,4 +14,13 @@ const router = createRouter({
   routes
 })
 
+// MILESTONE 8 
+router.beforeEach((to, from) => {
+  if (to.name === 'play' && sessionStorage.getItem('gameStarted') !== 'true') {
+    return { name: 'home' }
+  }
+})
+
 export default router
+
+// TODO Week 7: replace sessionStorage check with store.gameStarted
