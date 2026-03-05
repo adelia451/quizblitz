@@ -32,3 +32,7 @@ I tried to import these into PlayView.vue, its in views, and these are in compon
 *Prompt*
 What's the difference between "." and ".."
 
+### MILESTONE 7 - Add a Navigation Bar ###
+*Prompt*
+How can I center the text on a navigation Bar
+

@@ -74,7 +74,10 @@ export default {
                     console.log("Score: ", this.score)
                 }
                 this.currentIndex++ 
-                console.log("Current question: ", this.currentIndex + 1)
+                
+                if (this.currentIndex < this.questions.length) {
+                    console.log("Current question: ", this.currentIndex + 1)
+                }
 
                 if (this.currentIndex === this.questions.length) {
                     console.log ("Final score: ", this.score)

@@ -18,7 +18,7 @@ MY NOTES:
     <!-- DIV: In Vue a component must return a single root element so we wrap everything in <div>, without it Vue would not know how to render multiple top-level elements -->
     <!-- CLASS: applies CSS classes | card is existing in CSS and start-screen is a custm class I made -->
     <div class = "start-screen card"> 
-        <p>Welcome message</p>
+        <h1>Welcome to QuizBlitz</h1>
         <button v-on:click="playButton">Play</button> <!-- this is @click but I use v-on:click because reading that out reminds me how it works and that its a vue thing-->
     </div>
 </template>
