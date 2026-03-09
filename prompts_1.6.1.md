@@ -1,0 +1,163 @@
+**Phase 1**
+**Week 6**
+**Class 1**
+
+PROMPT: (exactly what you asked)
+RESPONSE: (paste the code or summary you received)
+WHAT I USED / CHANGED: (1–3 lines)
+
+### Milestone 1 - Project Setup 
+No AI used. 
+
+### Milestone 2 - StartScreen and ScoreBoard 
+
+**PROMPT:**
+When instructions say "component has no props", what is a component and what is a prop in the context of the instructions (pasted instruction section)?
+
+**RESPONSE:** 
+Component:
+A reusable piece of your UI.
+For example, StartScreen.vue is a component. Later, you could have other components like QuestionCard.vue, ScoreScreen.vue, etc.
+Components are like little “widgets” or “modules” of your app.
+
+Prop:
+A way to pass data from a parent component to a child component.
+Example: `<QuestionCard :question="currentQuestion"/>`
+
+Here question is a prop passed into the child component.
+Your StartScreen has no props because it doesn’t need any external data from the parent. It just emits an event when the button is clicked.
+ 
+**WHAT I USED / CHANGED: (1–3 lines)**
+I only used this to understand what to do, there was no changed or used code. 
+
+**PROMPT:**
+What is $emit` and the parent component?
+
+**RESPONSE:**
+`$emit` is how a child tells its parent something happened.
+
+In your case:
+StartScreen.vue is the child.
+App.vue is the parent.
+
+When you do: 
+`this.$emit('start')`
+Vue sends an event to the parent.
+
+In the parent, you “listen” for it:
+`<StartScreen @start="showQuiz = true" />`
+When start is emitted, the parent sets showQuiz = true and can replace the start screen with the quiz.
+So child → emits → parent listens → parent decides what to do.
+
+**WHAT I USED / CHANGED: (1–3 lines)**
+I only used this to understand what to do, there was no changed or used code. 
+
+**PROMPT**
+Write only skeleton code of a Vue 3 single-file component called ScoreBoard so I know what parts I need. 
+
+INSTRUCTIONS: - This component receives one prop: score (a Number). - It displays the final score and a Play Again button. -When Play Again is clicked, it emits "restart".
+
+**RESPONSE**
+Got it! Here’s the bare skeleton code with only the essential structure and placeholders, so you can fill in the details yourself:
+
+```HTML
+<template>
+    <div class="score-board">
+        <!-- heading -->
+        <!-- display score using the prop -->
+        <!-- Play Again button with click handler -->
+    </div>
+</template>
+
+<script>
+    export default {
+    name: 'ScoreBoard',
+    props: {
+        score: Number
+    },
+    methods: {
+        // method to emit "restart"
+    }
+    }
+</script>
+
+<style scoped>
+    /* optional styling */
+</style>
+```
+
+Skeleton includes:
+`<template>` → HTML placeholders
+`props` → `score`
+`methods` → placeholder for emitting "restart"
+`<style scoped>` → empty for now
+
+You can now think about what goes in each section without being distracted by the full implementation.
+
+**WHAT I USED / CHANGED: (1–3 lines):**
+I used the skeleton structure except the `<style>` and created the code myself using StartScreen.vue as a reference for everything except displaying score which is my following prompt. 
+
+**PROMPT**
+I created
+```JS
+    props: {
+        score: Number
+    },
+```
+What can I use to display score using the prop?
+
+**RESPONSE**
+Let’s go step by step, so you can understand the building blocks and do it yourself.
+
+Displaying the score using the prop
+In Vue templates, you can insert JavaScript expressions inside double curly braces ``{{ }}``.
+
+You already have the prop score defined in your component:
+```JS
+    props: {
+        score: Number
+    }
+```
+To show the score in your template, just use:
+    `<p>Your score: {{ score }}/10</p>`
+
+`{{ score }}` → Vue will replace it with the value passed from the parent component.
+Think of it like saying “show me the current value of score right here”.
+
+**WHAT I USED / CHANGED: (1–3 lines)**
+I used `<p>Your score: {{ score }} /  10</p>` and took note of the double curly brackets in my notes. 
+
+### Milestone 3 - QuestionCard 
+**Prompt**
+(After filling out milestone 3 with as much as I could figure out from previous milestones)
+
+Can you explain what I've done and let me know what I have to complete to fulfil the instructions. (pasted instructions)
+
+**Prompt**
+How do I turn an answer green or red when it is clicked by binding a CSS class to each button to check if it's the selected index and if the index matches `question.correct`
+
+**Prompt**
+Can you explain how to use v-if to show and hide components.
+
+**Prompt**
+My other methods have console logs but not `handleAnswer`, how can I make a console log that logs what the score was and then says it gained a point and adds it or didnt gain a point and remains the same like:
+
+score: 5
+correct: +1
+score: 6
+
+score:6
+wrong: +0
+score: 6
+
+My main question is the logic because in `handleAnswer` it's going to augment the score and I want to make sure to print the score before it runs and then update it. I can write a console log but don't uite remember how to show a variable like the score
+
+### Milestone 4 - App.vue Game Logic 
+**Prompt**
+Can you please give me 9 trivia questions and their answers.
+
+**Prompt**
+I have a bracket or comma error, can you spot it for me? (pasted a section from `data()` where I had messed that up)
+
+**Prompt**
+I have a visual issue where the last button I click has an outline and I don't know why, is it in my css? (pasted css file)

@@ -1,0 +1,44 @@
+**Phase 1**
+**Week 6**
+**Class 2**
+
+### MILESTONE 5 - Install and Configure Vue Router 
+**Prompt**
+I have to create the router file at `src/router/index.js`. I thought that was `touch src/router/index.js` and it didnt work?? 
+
+```
+$ touch src/router/index.js
+touch: cannot touch 'src/router/index.js': No such file or directory
+```
+
+### MILESTONE 6 - Create View Files and Move Game Logic 
+**Prompt**
+I'm using the Options API. How do I do routing navigation using `this.$router.push({ name: 'play' })`. Can you provide skeleton code and an explanation.
+
+**Prompt**
+Why is the route called play, where do we get that from? 
+
+**Prompt**
+What is a router
+
+**Prompt**
+Why instead of emitting to a parent we are now using the router to go to `/play`, is it better? Why?
+
+**Prompt**
+Have I messed up anywhere yet and what parts do I have left to do according to the instructions for `PlayView`. (pasted instructions and my own code)
+
+**Prompt**
+I tried to import these into `PlayView.vue`, its in views, and these are in components.
+```JS
+import ScoreBoard from './components/ScoreBoard.vue'
+import QuestionCard from './components/QuestionCard.vue'
+```
+**Prompt**
+What's the difference between "." and ".."
+
+### MILESTONE 7 - Add a Navigation Bar
+**Prompt**
+How can I center the text on a navigation Bar
+
+### MILESTONE 8 - Basic Navigation Guard
+NO AI USED
