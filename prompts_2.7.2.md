@@ -22,10 +22,12 @@ methods: {
 ```
 
 ### Milestone 11 — Refactor PlayView
-**Prompt**
 No AI used.
 
 ### Milestone 12 — Update HomeView
 **Prompt**
 The play button no longer works at all. Why?
+
+### Milestone 13 — Update the Navigation Guard
+No AI used.
 
