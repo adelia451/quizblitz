@@ -24,3 +24,8 @@ methods: {
 ### Milestone 11 — Refactor PlayView
 **Prompt**
 No AI used.
+
+### Milestone 12 — Update HomeView
+**Prompt**
+The play button no longer works at all. Why?
+

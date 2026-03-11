@@ -19,19 +19,25 @@ are now just telling the router to "take me to the route named play"
   </div>
 </template>
 
+<!-- MILESTONE 12 -->
 <script>
+    import { useGameStore } from '../stores/gameStore.js'
     import StartScreen from '../components/StartScreen.vue'
-    //import only laods the file BUT for Vue to know what we want to use (which components) I have to put it below
+    
     export default {
-    name: 'HomeView',
+        name: 'HomeView',
+
+    setup() {
+        return { store: useGameStore() }
+    },
+
     components: {
         StartScreen
     },
 
     methods: {
         startGame() {
-            sessionStorage.setItem('gameStarted', 'true')
-            //This name is from INDEX.JS
+            this.store.startGame()
             this.$router.push({ name: 'play' })
         }
     }
