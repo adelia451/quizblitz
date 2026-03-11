@@ -14,6 +14,8 @@ MY NOTES:
          <h2>Score Board</h2>
         <!-- display score using the prop -->
         <p>Your score: {{ score }} /  10</p>
+        <!-- MILESTONE 14 -->
+         <p>You scored {{ score }} out of {{ total }}</p>
         <!-- Play Again button with click handler-->
          <button v-on:click="playAgainButton">Play Again</button>
     </div>
@@ -22,8 +24,16 @@ MY NOTES:
 <script>
 export default {
     name: 'ScoreBoard',
+    // MILESTONE 14
     props: {
-        score: Number
+        score: {
+            type: Number,
+            required: true
+        },
+        total: {
+            type: Number,
+            default: 10
+        }
     },
     methods: {
         // method to emit "restart"

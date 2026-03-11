@@ -31,3 +31,5 @@ The play button no longer works at all. Why?
 ### Milestone 13 — Update the Navigation Guard
 No AI used.
 
+### Milestone 14 — ScoreBoard Update (if needed)
+No AI used.
