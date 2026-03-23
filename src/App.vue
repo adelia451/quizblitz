@@ -28,6 +28,7 @@ export default {
     background: #3d1a5c;
     border-radius: 15px;
     justify-content: center;
+    margin-bottom: 2rem;
   }
 
   nav a {
