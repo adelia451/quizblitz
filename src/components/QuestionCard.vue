@@ -5,6 +5,7 @@
 <template>
   <div class="question-card">
     <p class="question-text">{{ question.question }}</p>
+    <!--<p>Time left: {{ store.timeLeft }}</p>-->
     <div class="answers">
       <button
         v-for="(answer, index) in question.answers"
