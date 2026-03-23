@@ -67,21 +67,36 @@ export const useGameStore = defineStore('game', {
     },
 
     startGame() { //Called when the player clicks Play
+      console.log("Play button clicked")
       this.questions = [...questionBank]   // creates new array each game so that original question data is never modified
       this.currentIndex = 0
       this.score = 0
       this.gameState = 'playing'
       this.selectedAnswer = null
       this.timeLeft = 15
+
+      console.log("Current question:", this.currentIndex + 1)
+      
       this._startTimer()
     },
 
     submitAnswer(answerIndex) { //Called when the player clicks an asnwer button
       if (this.selectedAnswer !== null) return  // ignore double-clicks
+      
       this._stopTimer()
       this.selectedAnswer = answerIndex //receives the index of the button that was clicked (0,1,2,3)
+      
       const isCorrect = answerIndex === this.currentQuestion.correct
-      if (isCorrect) this.score++
+      
+      if (isCorrect) {
+        console.log("Correct: +1")
+        this.score++
+      } else {
+        console.log("Wrong: +0")
+      }
+
+      console.log("Score:", this.score)
+
       setTimeout(() => {
         this.nextQuestion()
       }, 1000)
@@ -91,15 +106,21 @@ export const useGameStore = defineStore('game', {
       this.selectedAnswer = null //reset to null so the next question starts with no button highlighted
       this.timeLeft = 15  // resets to 15 for the question
       if (this.isLastQuestion) {
+         console.log("Final score:", this.score)
+        console.log("Game over")
+        
         this._stopTimer()
         this.gameState = 'end'
       } else {
         this.currentIndex++
+        console.log("Current question:", this.currentIndex + 1)
+
         this._startTimer()
       }
     },
 
     resetGame() {
+      console.log("Game is restarting")
       this._stopTimer()
       this.questions = []
       this.currentIndex = 0
