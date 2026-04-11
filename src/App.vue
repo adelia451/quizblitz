@@ -9,9 +9,12 @@
     <nav>
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/leaderboard">Leaderboard</RouterLink>
+      <RouterLink to="/login">Login</RouterLink>
+      <RouterLink to="/register">Register</RouterLink>
     </nav>
     <RouterView />
   </div>
+
 </template>
 
 <script>
